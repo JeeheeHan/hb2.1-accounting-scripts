@@ -23,12 +23,16 @@ melon_seedlessness = {
 }
 
 nest_melons = {}
-for names in melon_names:
-    for prices in melon_prices:
-        for seeds in melon_seedlessness:
-    nest_melons[names] = {'melon_prices:' = prices, 'melon_seedlessness' = seeds}
+for names in melon_names.values():
+    nest_melons[names] = {}
+    for n in melon_prices.values():
+        nest_melons[names]['melon_prices'] = n
+        for seeds in melon_seedlessness.values():
+            nest_melons[names]['melon_seedlessness'] = seeds
 
-return nest_melons
+
+print(nest_melons)
+
 
 
 
