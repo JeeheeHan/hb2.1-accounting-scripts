@@ -1,18 +1,18 @@
 """Print out all the melons in our inventory."""
 
 
-from melons import melon_names, melon_seedlessness, melon_prices
+from melons import nest_melons #my nested dictionary for melon + properties
 
 
-def print_melon(name, seedless, price):
+def print_melon(nest_melons):
     """Print each melon with corresponding attribute information."""
+    
+    for melon in nest_melons:
+        if nest_melons[melon]['melon_seedlessness']:
+            print(f"{melon}s have seeds and are ${nest_melons[melon]['melon_prices']}")
+        else: 
+            print(f"{melon}s do not have seeds and are ${nest_melons[melon]['melon_prices']}")
 
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
-
-    print(f'{name}s {have_or_have_not} seeds and are ${price:.2f}')
-
-
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+#def print_melons(nest_melons):
+    #for melons in nest_melons:
+        #print("nest_melons[melons])
